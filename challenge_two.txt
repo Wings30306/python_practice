@@ -1,0 +1,25 @@
+Hello!!!
+Line Two
+3 was here
+Line Four
+Appended Line
+
+code used in Python console: 
+>>> f = open("challenge_two.txt", "r+")
+>>> f.write("Hello!!!")
+8
+>>> f.read()
+'\nLine Two\nLine Three\nLine Four\n'
+>>> f.seek(19)
+19
+>>> f.read()
+'\nLine Three\nLine Four\n'
+>>> f.seek(20)
+20
+>>> f.write("3 was here")
+10
+>>> f.read()
+'\nLine Four\n'
+>>> f.write("Appended Line")
+13
+>>> f.close()

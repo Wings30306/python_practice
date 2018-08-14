@@ -1,4 +1,4 @@
-f = open ('files/relative_data.txt', '')
+f = open ('files/relative_data.txt')
 lines = f.read()
 f.close()
 print(lines)
