@@ -1,0 +1,24 @@
+This document was created using the w+ mBOO!d
+The cursor was in position 45 when this text was added.
+The cursor was in position 104 when this line was added. But what happens when I put the cursor at position 40 and type 'BOO!'?
+
+code used in the python terminal:
+
+>>> f = open("challenge_one.txt", "w+")
+>>> f.write("This document was created using the w+ method")
+45
+>>> f.tell()
+45
+>>> f.write("\nThe cursor was in position 45 when this text was added.\n")
+57
+>>> f.tell()
+104
+>>> f.write("The cursor was in position 104 when this line was added. But what happens when I put the cursor at position 40 and
+type 'BOO!'?")
+127
+>>> f.seek(40)
+40
+>>> f.write("BOO!")
+4
+>>> f.close()
+>>>
