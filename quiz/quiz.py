@@ -27,7 +27,7 @@ def ask_questions():
 
     for question, answer in questions_and_answers:
         guess = input(question + "> ")
-        if guess == answer:
+        if guess.lower() == answer.lower():
             score += 1
             print("Correct!")
             print(score)
@@ -45,10 +45,20 @@ def add_question():
     print("OK then, tell me the answer")
     answer = input("{0}\n> ".format(question))
 
-    file = open("quiz/questions.txt", "a")
-    file.write(question + "\n")
-    file.write(answer + "\n")
-    file.close()
+    print("Your question: {0} \nAnswer: {1}".format(question.capitalize(), answer.capitalize()))
+    check = input("Please confirm that this question and answer are correct: y/n \n> ")
+    for check in check:
+        if check.lower() == "y":
+           file = open("quiz/questions.txt", "a")
+           file.write(question.capitalize() + "\n")
+           file.write(answer.capitalize() + "\n")
+           file.close()
+        elif check.lower() == "n":
+            print("Your question has been deleted.")
+            break
+        else:
+            print("Invalid option, please try again.")
+        print("")
 
 
 def game_loop():
