@@ -100,3 +100,4 @@ class TestBoggle(unittest.TestCase):
     """
     dictionary = boggle.get_dictionary("words.txt")
     self.assertGreater(len(dictionary), 0)
+
